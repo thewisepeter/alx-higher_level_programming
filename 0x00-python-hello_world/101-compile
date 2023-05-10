@@ -1,0 +1,17 @@
+#!/bin/bash
+
+filename="$PYFILE"
+output_file="${filename%.*}.pyc"
+
+echo "Compiling $filename ..."
+if py3compile "$filename"; then
+  echo "Compilation succeeded"
+  if mv -v ./__pycache__/*.pyc "$output_file"; then
+    echo "Output file: $output_file"
+  else
+    echo "Error: Failed to move output file"
+  fi
+else
+  echo "Error: Compilation failed"
+fi
+
