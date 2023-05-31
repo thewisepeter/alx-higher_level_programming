@@ -9,12 +9,10 @@ class Square:
         """initializes a square of length size"""
         self.__size = size
 
-    
     @property
     def size(self):
         """gets size of square"""
         return self.__size
-    
 
     @size.setter
     def size(self, size):
