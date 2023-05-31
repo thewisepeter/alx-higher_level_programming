@@ -7,17 +7,20 @@ class Node:
 
     def __init__(self, data, next_node=None):
         """initializes node"""
+        
         self.__data = data
         self.__next_node = next_node
 
     @property
     def data(self):
         """gets data"""
+        
         return self.__data
 
     @data.setter
     def data(self, value):
         """sets data"""
+        
         if not isinstance(value, int):
             raise TypeError('data must be an integer')
         self.__data = value
@@ -33,7 +36,7 @@ class Node:
         """sets next_node"""
 
         if (value is not None and not isinstance(value, Node)):
-            raise TypeError('next_node must be a Node objext')
+            raise TypeError('next_node must be a Node object')
 
         self.__next_node = value
 
