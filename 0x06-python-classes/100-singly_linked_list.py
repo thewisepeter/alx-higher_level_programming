@@ -7,20 +7,20 @@ class Node:
 
     def __init__(self, data, next_node=None):
         """initializes node"""
-        
+
         self.__data = data
         self.__next_node = next_node
 
     @property
     def data(self):
         """gets data"""
-        
+
         return self.__data
 
     @data.setter
     def data(self, value):
         """sets data"""
-        
+
         if not isinstance(value, int):
             raise TypeError('data must be an integer')
         self.__data = value
@@ -52,8 +52,8 @@ class SinglyLinkedList:
     def __str__(self):
         """makes list printable"""
 
-        current = self.__head
         elements = ""
+        current = self.__head
         while current:
             elements += str(current.data) + "\n"
             current = current.next_node
