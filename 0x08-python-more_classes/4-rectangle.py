@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+ """Reactangle Definition"""
+
 
 class Rectangle:
     """ Rectangle Definition"""
