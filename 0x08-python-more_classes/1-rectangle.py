@@ -4,7 +4,10 @@
 
 class Rectangle:
     """ Rectangle Definition"""
+
     def __init__(self, width=0, height=0):
+        """initializes rectangle"""
+
         self.__width = width
         self.__height = height
 
