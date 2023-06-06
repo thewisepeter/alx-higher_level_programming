@@ -110,9 +110,8 @@ adding an integer to a tuple
         ...
     TypeError: b must be an integer
 
-passing more than one argument
+passing more than two arguments
     >>> add_integer(5, 2, 2)
     Traceback (most recent call last):
         ...
-    TypeError: add_integer() takes from 1 to 2 positional
-    arguments but 3 were given
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
