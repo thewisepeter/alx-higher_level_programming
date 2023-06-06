@@ -76,7 +76,9 @@ an empty matrix
 an empty list
     >>> matrix = []
     >>> matrix_divided(matrix, 3)
-    []
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists)
 
 passing that has a strings matrix
     >>> matrix = [
