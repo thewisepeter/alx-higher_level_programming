@@ -1,0 +1,118 @@
+The ``0-add_integer`` module
+============================
+
+add_integer takes two integers and returns their sum
+----------------------------------------------------
+
+Using add_integer
+-----------------
+
+First import ``add_integer`` from the ``0-add_integer`` module:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+adding positive integer the other default
+    >>> add_integer(3)
+    101
+
+adding negative integer the other default
+    >>> add_integer(-3)
+    95
+
+adding positive float the other default
+    >>> add_integer(3.7)
+    101
+
+adding negative float the other default
+    >>> add_integer(-3.9)
+    95
+
+adding two positive integers
+    >>> add_integer(3, 4)
+    7
+
+adding one positive integer the other one negative
+    >>> add_integer(3, -4)
+    -1
+
+adding two negative integers
+    >>> add_integer(-3, -4)
+    -7
+
+adding an integer and a float
+    >>> add_integer(3, 4.5)
+    7
+
+adding two floats
+    >>> add_integer(3.4, 4.5)
+    7
+
+adding an integer and a negative float
+    >>> add_integer(3, -4.5)
+    -1
+
+adding a negative integer and negative float
+    add_integer(-3, -4.5)
+    -7
+
+adding two negative floats
+    add_integer(-3.7, -4.5)
+    -7
+
+adding a negative integer and a positive float
+    add_integer(-3, 4.5)
+    1
+
+adding an integer and a string
+    >>> add_integer(3, "school")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+adding a string and an integer
+    >>> add_integer('p', 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+adding a string and a string
+    >>> add_integer('p', 'w')
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+adding only a string the other default
+    >>> add_integer('peter is awesome')
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+adding only a list the other default
+    >>> add_integer([1,2,3,4,5])
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+adding a float and a list
+    >>> add_integer(3.6, [1,2,3,4,5])
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+adding a tuple the other default
+    >>> add_integer((2, 2))
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+adding an integer to a tuple
+    >>> add_integer(5, (2, 2))
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+passing more than one argument
+    >>> add_integer(5, 2, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() takes from 1 to 2 positional
+    arguments but 3 were given
