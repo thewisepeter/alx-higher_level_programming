@@ -1,0 +1,60 @@
+The ''3-say_my_name'' module
+============================
+
+say_my_name that prints My name is <first name> <last name>
+-----------------------------------------------------------
+
+Using say_my_name
+-----------------
+
+first import ''say_my_name'' from the ''3-say_my_name'' module
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name('Peter', 'Wisdom')
+    My name is Peter Wisdom
+
+name is passed as variable instead of a string
+    >>> say_my_name(Peter, Wisdom)
+    Traceback (most recent call last):
+        ...
+    NameError: name 'Peter' is not defined
+
+integers are passed as string literals
+    >>> say_my_name("456", "908")
+    My name is 456 908
+    
+one name passed
+    >>> say_my_name('Peter')
+    My name is Peter 
+
+Wrong Input
+-----------
+
+integer is passed as first_name
+    >>> say_my_name(9756, "Peter")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+integer is passed as last_name
+    >>> say_my_name("Peter", 4567)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+no argument is given
+    >>> say_my_name()
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+more than 2 arguments are given
+    >>> say_my_name("Peter", "Is", "Wisdom")
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+a list is passed
+    say_my_name(["Peter", "Is"], "Wisdom")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
