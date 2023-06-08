@@ -3,6 +3,6 @@
 
 
 class LockedClass:
-        """ only initiates first_name """
-        
-        __slots__ = ["first_name"]
+    """ only initiates first_name """
+
+    __slots__ = ["first_name"]
