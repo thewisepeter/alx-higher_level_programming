@@ -123,3 +123,13 @@ when div is 0
     Traceback (most recent call last):
         ...
     TypeError: division by zero
+
+when matrix has a string literal
+    >>> matrix = [
+    ...     [2, 5, "7"],
+    ...     [3, 6, 9]
+    ... ]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix of integers/floats
