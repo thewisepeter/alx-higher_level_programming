@@ -132,4 +132,4 @@ when matrix has a string literal
     >>> matrix_divided(matrix, 2)
     Traceback (most recent call last):
         ...
-    TypeError: matrix must be a matrix (list of lists)
+    TypeError: matrix must be a matrix of integers/floats
