@@ -115,3 +115,15 @@ passing more than two arguments
     Traceback (most recent call last):
         ...
     TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+passing None as first arg
+    >>> add_integer(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+passing None as second arg
+    >>> add_integer(2, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
