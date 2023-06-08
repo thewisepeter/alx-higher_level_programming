@@ -127,3 +127,21 @@ passing None as second arg
     Traceback (most recent call last):
         ...
     TypeError: b must be an integer
+
+passing positive infinity
+    >>> add_integer(float('inf'), 0)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+passing special floating-point value called "NaN"
+    >>> add_integer(0, float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+passin a = NaN
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
