@@ -66,7 +66,7 @@ matrix is a list
     >>> matrix_divided(matrix, 3)
     Traceback (most recent call last):
         ...
-    TypeError: matrix must be a matrix (list of lists)
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 rows of different size
     >>> matrix = [
@@ -88,7 +88,7 @@ an empty list
     >>> matrix_divided(matrix, 3)
     Traceback (most recent call last):
         ...
-    TypeError: matrix must be a matrix (list of lists)
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 passing that has a strings matrix
     >>> matrix = [
@@ -98,21 +98,21 @@ passing that has a strings matrix
     >>> matrix_divided(matrix, -5)
     Traceback (most recent call last):
         ...
-    TypeError: matrix must be a matrix of integers/floats
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 passing an integer
     >>> matrix = 3
     >>> matrix_divided(matrix, -5)
     Traceback (most recent call last):
         ...
-    TypeError: matrix must be a matrix (list of lists)
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 passing a tuple
     >>> matrix = (2, 3, 5)
     >>> matrix_divided(matrix, 9)
     Traceback (most recent call last):
         ...
-    TypeError: matrix must be a matrix (list of lists)
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 when div is 0
     >>> matrix = [
@@ -132,4 +132,4 @@ when matrix has a string literal
     >>> matrix_divided(matrix, 2)
     Traceback (most recent call last):
         ...
-    TypeError: matrix must be a matrix of integers/floats
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
