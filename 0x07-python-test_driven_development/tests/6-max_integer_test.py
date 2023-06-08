@@ -16,7 +16,7 @@ class TestMax_Integer(unittest.TestCase):
     def test_disorderly(self):
         """Test an ordered list of integers."""
         disorderly = [3, 2, 1, 4]
-        self.assertEqual(max_integer(disordered), 4)
+        self.assertEqual(max_integer(disorderly), 4)
 
     def test_floats(self):
         """test floats"""
@@ -30,12 +30,12 @@ class TestMax_Integer(unittest.TestCase):
     def test_floats_ints(self):
         """test floats and ints"""
         floats_ints = [1.4, 2, 3.5, 4]
-        self.assertAlmostEqual(max_integer(orderly), 4)
+        self.assertAlmostEqual(max_integer(floats_ints), 4)
 
     def test_string(self):
         """test a string"""
         string = "Peter"
-        self.assertAlmostEqual(max_integer(string), r)
+        self.assertEqual(max_integer(string), 't')
 
     def test_empty_string(self):
         """test an empty string"""
