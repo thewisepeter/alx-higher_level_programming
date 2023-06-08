@@ -10,6 +10,21 @@ Using text_indentation
 
 first import ''text_indentation'' from the ''5-text_indentation'' module
     >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("Peter?")
+    Peter?
+    <BLANKLINE>
+
+space at the beginning
+    >>> text_indentation("   Peter?")
+    Peter?
+    <BLANKLINE>
+
+space at the end
+    >>> text_indentation("Peter?     ")
+    Peter?
+    <BLANKLINE>
+
+text with multi symbols
     >>> text_indentation("Peter?the:greatest.is?here")
     Peter?
     <BLANKLINE>
@@ -19,6 +34,7 @@ first import ''text_indentation'' from the ''5-text_indentation'' module
     <BLANKLINE>
     is?
     <BLANKLINE>
+    here
 
 Two word sentence spearted by spaces
     >>> text_indentation("Holberton School")
@@ -28,6 +44,10 @@ text with leading white spaces
     >>> text_indentation("     ?")
     ?
     <BLANKLINE>
+
+just a normal sentence
+    >>> text_indentation("Peter is great.")
+    Peter is great.
     <BLANKLINE>
 
 text separated by a period
@@ -47,7 +67,6 @@ text ending with white spaces
 
 text with white spaces
     >>> text_indentation("          ")
-    <BLANKLINE>
 
 text with only ":,.?"
     >>> text_indentation(":.?")
@@ -56,7 +75,6 @@ text with only ":,.?"
     .
     <BLANKLINE>
     ?
-    <BLANKLINE>
     <BLANKLINE>
 
 Wrong input
@@ -67,5 +85,3 @@ passing an integer
     Traceback (most recent call last):
         ...
     TypeError: text must be a string
-
-
