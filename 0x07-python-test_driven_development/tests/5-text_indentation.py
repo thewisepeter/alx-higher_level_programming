@@ -20,11 +20,21 @@ first import ''text_indentation'' from the ''5-text_indentation'' module
     is?
     <BLANKLINE>
 
+Two word sentence spearted by spaces
+    >>> text_indentation("Holberton School")
+    Holberton School
+
 text with leading white spaces
     >>> text_indentation("     ?")
     ?
     <BLANKLINE>
     <BLANKLINE>
+
+text separated by a period
+    >>> text_indentation("Holberton.School")
+    Holberton.
+    <BLANKLINE>
+    School
 
 text ending with white spaces
     >>> text_indentation(":.?       ")
