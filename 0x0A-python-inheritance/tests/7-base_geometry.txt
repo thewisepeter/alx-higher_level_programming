@@ -49,3 +49,9 @@ checking integer_validator with float
     Traceback (most recent call last):
         ...
     TypeError: Peter must be an integer
+
+1 argument to integer_validator
+    >>> figure.integer_validator(7)
+    Traceback (most recent call last):
+        ...
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
