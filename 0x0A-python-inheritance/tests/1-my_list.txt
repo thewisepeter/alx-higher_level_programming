@@ -1,0 +1,60 @@
+The ''1-my_list'' module
+========================
+
+prints a sorted list
+--------------------
+
+Using print_sorted
+------------------
+
+First import print_sorted from the ''1-my_list'' module:
+    >>> print_sorted = __import__('1-my_list').MyList.print_sorted
+
+ordered list of integers
+    >>> list = [1, 2, 3 , 4]
+    >>> print_sorted(list)
+    [1, 2, 3, 4]
+
+random list of integers
+    >>> list = [5, 6, 8, 2]
+    >>> print_sorted(list)
+    [2, 5, 6, 8]
+
+empty list
+    >>> list = []
+    >>> print_sorted(list)
+    []
+
+list with characters
+    >>> list = ["a", 6, 8, 2]
+    >>> print_sorted(list)
+    Traceback (most recent call last):
+        ...
+    TypeError: '<' not supported between instances of 'int' and 'str'
+
+a tuple with integers
+    >>> list = (2, 4, 5)
+    >>> print_sorted(list)
+    [2, 4, 5]
+
+a tuple with strings
+    >>> list = (2, 4, "a")
+    >>> print_sorted(list)
+    Traceback (most recent call last):
+        ...
+    TypeError: '<' not supported between instances of 'str' and 'int'
+
+list with a single integer
+    >>> list = [2]
+    >>> print_sorted(list)
+    [2]
+
+tuple in a list
+    >>> list = [(2, 3, 5)]
+    >>> print_sorted(list)
+    [(2, 3, 5)]
+
+list in tuple
+    >>> list = ([2, 3, 5])
+    >>> print_sorted(list)
+    [2, 3, 5]
