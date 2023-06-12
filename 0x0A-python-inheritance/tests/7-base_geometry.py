@@ -85,3 +85,29 @@ checking integer_validator with a list
     Traceback (most recent call last):
         ...
     TypeError: Peter must be an integer
+
+check for docstrings
+--------------------
+module
+------
+    >>> m_doc = __import__("7-base_geometry").__doc__
+    >>> len(m_doc) > 1
+    True
+
+class
+-----
+    >>> c_doc = __import__("7-base_geometry").BaseGeometry.__doc__
+    >>> len(c_doc) > 1
+    True
+
+area method
+-----------
+    >>> method = __import__("7-base_geometry").BaseGeometry.area.__doc__
+    >>> len(method) > 1
+    True
+
+integer_validator method
+------------------------
+    >>> method = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+    >>> len(method) > 1
+    True
