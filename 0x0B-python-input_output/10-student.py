@@ -13,4 +13,5 @@ class Student:
         """returns dictionary representation of Student"""
         if attrs is None:
             return self.__dict__
-        return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
+        return {attr: getattr(self, attr) for attr in
+                attrs if hasattr(self, attr)}
