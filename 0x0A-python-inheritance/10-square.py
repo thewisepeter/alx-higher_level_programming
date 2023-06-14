@@ -1,27 +1,14 @@
 #!/usr/bin/python3
-"""module with an empty class"""
+"""module with square class"""
+Rectangle = __import__("9-rectangle").Rectangle
 
 
-class BaseGeometry:
-    """class of base geometry"""
+class Square(Rectangle):
+    """Square child"""
+    def __init__(self, size):
+        """initiates square"""
+        self.integer_validator("size", size)
+        self.__size = size
 
     def area(self):
-        """gets area of figure"""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """validates value"""
-        if type(value) != int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
-
-
-class Rectangle(BaseGeometry):
-    """Rectangle child"""
-    def __init__(self, width, height):
-        """initiates rectangle"""
-        self.integer_validator("width", width)
-        self.__width = width
-        self.integer_validator("height", height)
-        self.__height = height
+        return self.__size * self.__size
