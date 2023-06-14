@@ -7,9 +7,9 @@ class Rectangle(BaseGeometry):
     """Rectangle child"""
     def __init__(self, width, height):
         """initiates rectangle"""
-        super().integer_validator("width", width)
+        self.integer_validator("width", width)
         self.__width = width
-        super().integer_validator("height", height)
+        self.integer_validator("height", height)
         self.__height = height
 
     def area(self):
