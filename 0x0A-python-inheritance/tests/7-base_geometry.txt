@@ -41,7 +41,7 @@ checking for area
     >>> figure.area(2)
     Traceback (most recent call last):
         ...
-    TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
+    TypeError: area() takes 1 positional argument but 2 were given
 
 checking integer_validator with positive integer
     >>> figure.integer_validator("Peter", 1)
@@ -74,7 +74,7 @@ checking integer_validator with float
     >>> figure.integer_validator(7)
     Traceback (most recent call last):
         ...
-    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 too many arguments to integer_validator
     figure.integer_validator("Peter", 7, 8, 9)
@@ -86,7 +86,7 @@ no arguments to integer_validator
     >>> figure.integer_validator()
     Traceback (most recent call last):
         ...
-    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 checking integer_validator with a tuple
     >>> figure.integer_validator("Peter", (7, 8))
