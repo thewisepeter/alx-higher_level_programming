@@ -42,7 +42,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        return x
+        return self.__x
 
     @x.setter
     def x(self, x):
@@ -55,7 +55,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        return y
+        return self.__y
 
     @y.setter
     def y(self, y):
@@ -74,3 +74,10 @@ class Rectangle(Base):
         """displays the rectangle using #"""
         for x in range(self.__height):
             print("#" * self.__width)
+
+    def __str__(self):
+        """string representation of the rectangle"""
+        return (f"[Rectangle] ({self.id}) "
+                f"{self.__x}/{self.__y} - "
+                f"{self.__width}/{self.__height}"
+                )
