@@ -2,7 +2,9 @@
 #test module for the class Rectangle
 import unittest
 from models.base import Base
-from models.rectangle import Rectangle 
+from models.rectangle import Rectangle
+from io import StringIO
+from unittest import mock
 
 
 class TestRectangle(unittest.TestCase):
@@ -31,6 +33,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rec.id, 5)
 
     def test_attribute_validation(self):
+        #test for validation of attributes of rectangle class
         with self.assertRaises(TypeError):
             rec = Rectangle(2, "3", 4, 6)
 
@@ -56,12 +59,25 @@ class TestRectangle(unittest.TestCase):
             rec = Rectangle(2, 3, 4, -6)
 
     def test_area(self):
+        #test for area function of rectangle class
         rec = Rectangle(5, 4)
         self.assertEqual(rec.area(), 20)
 
         rec.width = 8
         rec.height = 5
         self.assertEqual(rec.area(), 40)
+
+    def test_display(self):
+        #tests the display function of rectangle class
+        rec = Rectangle(4, 3)
+
+        expected_display = "####\n" \
+                           "####\n" \
+                           "####\n"
+
+        with mock.patch('sys.stdout', new=StringIO()) as fake_out:
+            rec.display()
+            self.assertEqual(fake_out.getvalue(), expected_display)
 
 
 if __name__ == '__main__':
