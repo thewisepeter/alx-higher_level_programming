@@ -10,6 +10,10 @@ import os
 class TestBaseClass(unittest.TestCase):
     #Test Base Class
 
+    def setUp(self):
+        #reset id for each run
+        Base._Base__nb_objects = 0
+
     def test_initial_id(self):
         #test if initializes is okay
         obj1 = Base()
@@ -116,6 +120,33 @@ class TestBaseClass(unittest.TestCase):
             {"id": 2, "name": "Square", "size": 7}
         ]
         self.assertEqual(result, expected)
+
+    def test_create_square(self):
+        #Test create method with Square class
+        square_dict = {'id': 1, 'size': 5, 'x': 2, 'y': 3}
+        square = Square.create(**square_dict)
+        self.assertIsInstance(square, Square)
+        self.assertEqual(square.id, 1)
+        self.assertEqual(square.size, 5)
+        self.assertEqual(square.x, 2)
+        self.assertEqual(square.y, 3)
+
+    def test_create_rectangle(self):
+        #Test create method with Rectangle class
+        rectangle_dict = {'id': 1, 'width': 10, 'height': 5, 'x': 2, 'y': 3}
+        rectangle = Rectangle.create(**rectangle_dict)
+        self.assertIsInstance(rectangle, Rectangle)
+        self.assertEqual(rectangle.id, 1)
+        self.assertEqual(rectangle.width, 10)
+        self.assertEqual(rectangle.height, 5)
+        self.assertEqual(rectangle.x, 2)
+        self.assertEqual(rectangle.y, 3)
+
+    def test_create_invalid_class(self):
+        #Test create method with invalid class
+        invalid_dict = {'id': 1, 'size': 5, 'x': 2, 'y': 3}
+        with self.assertRaises(AttributeError):
+            instance = Base.create(**invalid_dict)
 
 
 if __name__ == '__main__':
