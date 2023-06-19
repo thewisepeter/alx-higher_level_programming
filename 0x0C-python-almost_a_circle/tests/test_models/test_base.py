@@ -148,6 +148,30 @@ class TestBaseClass(unittest.TestCase):
         with self.assertRaises(AttributeError):
             instance = Base.create(**invalid_dict)
 
+    def test_load_from_file_rectangle(self):
+        # Test load_from_file method with Rectangle class
+        Rectangle._Base__nb_objects = 0
+
+        r1 = Rectangle(10, 20, 1, 1, id=1)
+        r2 = Rectangle(5, 5, 2, 2, id=2)
+        rectangles = [r1, r2]
+        Rectangle.save_to_file(rectangles)
+
+        loaded_rectangles = Rectangle.load_from_file()
+        self.assertEqual(len(loaded_rectangles), 2)
+        self.assertIsInstance(loaded_rectangles[0], Rectangle)
+        self.assertIsInstance(loaded_rectangles[1], Rectangle)
+        self.assertEqual(loaded_rectangles[0].id, 1)
+        self.assertEqual(loaded_rectangles[1].id, 2)
+        self.assertEqual(loaded_rectangles[0].width, 10)
+        self.assertEqual(loaded_rectangles[1].width, 5)
+        self.assertEqual(loaded_rectangles[0].height, 20)
+        self.assertEqual(loaded_rectangles[1].height, 5)
+        self.assertEqual(loaded_rectangles[0].x, 1)
+        self.assertEqual(loaded_rectangles[1].x, 2)
+        self.assertEqual(loaded_rectangles[0].y, 1)
+        self.assertEqual(loaded_rectangles[1].y, 2)
+
 
 if __name__ == '__main__':
     unittest.main()
