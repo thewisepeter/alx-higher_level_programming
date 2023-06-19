@@ -99,5 +99,24 @@ class TestRectangle(unittest.TestCase):
             rec.display()
             self.assertEqual(fake_out.getvalue(), expected_display)
 
+    def test_update_args(self):
+        #tests update to rectangle method with only args
+        rec = Rectangle(5, 10, 2, 4, id=1)
+
+        self.assertEqual(rec.width, 5)
+        self.assertEqual(rec.height, 10)
+        self.assertEqual(rec.x, 2)
+        self.assertEqual(rec.y, 4)
+        self.assertEqual(rec.id, 1)
+
+        rec.update(1, 3, 5, 6, 4)
+
+        self.assertEqual(rec.id, 1)
+        self.assertEqual(rec.width, 3)
+        self.assertEqual(rec.height, 5)
+        self.assertEqual(rec.x, 6)
+        self.assertEqual(rec.y, 4)
+
+
 if __name__ == '__main__':
     unittest.main()
