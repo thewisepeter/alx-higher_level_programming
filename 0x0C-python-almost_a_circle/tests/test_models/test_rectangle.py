@@ -79,6 +79,14 @@ class TestRectangle(unittest.TestCase):
             rec.display()
             self.assertEqual(fake_out.getvalue(), expected_display)
 
+    def test_str(self):
+        #tests the str method of the rectangle class
+        rec = Rectangle(5, 4, 2, 3, id=1)
+
+        expected_str = '[Rectangle] (1) 2/3 - 5/4'
+
+        self.assertEqual(str(rec), expected_str)
+
 
 if __name__ == '__main__':
     unittest.main()
