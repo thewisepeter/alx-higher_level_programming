@@ -128,6 +128,26 @@ class TestRectangle(unittest.TestCase):
         rec.update(3, 4)
         self.assertEqual(str(rec), "[Rectangle] (3) 2/4 - 4/10")
 
+        rec.update(4, 5, 7)
+        self.assertEqual(str(rec), "[Rectangle] (4) 2/4 - 5/7")
+
+        rec.update(7, 6, 3, 5)
+        self.assertEqual(str(rec), "[Rectangle] (7) 5/4 - 6/3")
+
+        rec.update(width=10)
+        self.assertEqual(str(rec), "[Rectangle] (7) 5/4 - 10/3")
+
+        rec.update(y=7, height=49)
+        self.assertEqual(str(rec), "[Rectangle] (7) 5/7 - 10/49")
+
+        rec.update(id=6, x=7, width=3, y=7, height=10)
+        self.assertEqual(str(rec), "[Rectangle] (6) 7/7 - 3/10")
+
+        rec.update(width=34, id=9, x=8)
+        self.assertEqual(str(rec), "[Rectangle] (9) 8/7 - 34/10")
+
+        rec.update(3, height=6, y=4)
+        self.assertEqual(str(rec), "[Rectangle] (3) 8/7 - 34/10")
 
 
 if __name__ == '__main__':
