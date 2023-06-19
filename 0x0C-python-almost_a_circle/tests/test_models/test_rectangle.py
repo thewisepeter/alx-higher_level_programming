@@ -9,6 +9,7 @@ class TestRectangle(unittest.TestCase):
     #Test Rectangle Class
 
     def test_initial_values(self):
+        #tests if initiation is done right
         rec = Rectangle(5, 10, 2, 4, id=1)
 
         self.assertEqual(rec.width, 5)
@@ -28,6 +29,31 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rec.x, 1)
         self.assertEqual(rec.y, 9)
         self.assertEqual(rec.id, 5)
+
+    def test_attribute_validation(self):
+        with self.assertRaises(TypeError):
+            rec = Rectangle(2, "3", 4, 6)
+
+        with self.assertRaises(TypeError):
+            rec = Rectangle("2", 3, 4, 6)
+
+        with self.assertRaises(ValueError):
+            rec = Rectangle(-2, 3, 4, 6)
+
+        with self.assertRaises(ValueError):
+            rec = Rectangle(2, -3, 4, 6)
+
+        with self.assertRaises(TypeError):
+            rec = Rectangle(2, 3, "4", 6)
+
+        with self.assertRaises(TypeError):
+            rec = Rectangle(2, 3, 4, "6")
+
+        with self.assertRaises(ValueError):
+            rec = Rectangle(2, 3, -4, 6)
+
+        with self.assertRaises(ValueError):
+            rec = Rectangle(2, 3, 4, -6)
 
 if __name__ == '__main__':
     unittest.main()
