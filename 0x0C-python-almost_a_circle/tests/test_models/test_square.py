@@ -113,6 +113,12 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(sq_5.x, 3)
         self.assertEqual(sq_5.y, 9)
 
+    def test_to_dictionary(self):
+        """tests the dictionary representation of Square class"""
+        sq = Square(10, 2, 1)
+        expected_dic = {'id': sq.id, 'x': 2, 'size': 10, 'y': 1}
+        self.assertEqual(sq.to_dictionary(), expected_dic)
+
 
 if __name__ == '__main__':
     unittest.main()
