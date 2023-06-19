@@ -25,33 +25,15 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(sq_2.y, 3)
         self.assertIsNotNone(sq_2.id, 15)
 
-    """def test_attribute_validation(self):
-        #test for validation of attributes of rectangle class
+    def test_attribute_validation(self):
+        #test for validation of attributes of Square class
         with self.assertRaises(TypeError):
-            rec = Rectangle(2, "3", 4, 6)
-
-        with self.assertRaises(TypeError):
-            rec = Rectangle("2", 3, 4, 6)
-
-        with self.assertRaises(ValueError):
-            rec = Rectangle(-2, 3, 4, 6)
-
-        with self.assertRaises(ValueError):
-            rec = Rectangle(2, -3, 4, 6)
+            sq = Square("3")
 
         with self.assertRaises(TypeError):
-            rec = Rectangle(2, 3, "4", 6)
+            sq = Square(2 + 3j)
 
-        with self.assertRaises(TypeError):
-            rec = Rectangle(2, 3, 4, "6")
-
-        with self.assertRaises(ValueError):
-            rec = Rectangle(2, 3, -4, 6)
-
-        with self.assertRaises(ValueError):
-            rec = Rectangle(2, 3, 4, -6)
-
-    def test_area(self):
+    """def test_area(self):
         #test for area function of rectangle class
         rec = Rectangle(5, 4)
         self.assertEqual(rec.area(), 20)
