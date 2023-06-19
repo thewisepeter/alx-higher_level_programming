@@ -148,6 +148,13 @@ class TestRectangle(unittest.TestCase):
         rec.update(3, height=6, y=4)
         self.assertEqual(str(rec), "[Rectangle] (3) 8/7 - 34/10")
 
+    def test_to_dictionary(self):
+        """tests the dictionary representation of the rectangle"""
+        rec = Rectangle(10, 2, 1, 9, id=1)
+        expected_dic = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
+        self.assertEqual(rec.to_dictionary(), expected_dic)
+
+
 
 if __name__ == '__main__':
     unittest.main()
