@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-#test module for the class Rectangle
+#test module for the class Square
 import unittest
-from models.rectangle import Rectangle
+from models.square import Square
 from io import StringIO
 from unittest import mock
 
@@ -11,27 +11,21 @@ class TestRectangle(unittest.TestCase):
 
     def test_initial_values(self):
         #tests if initiation is done right
-        rec = Rectangle(5, 10, 2, 4, id=1)
+        sq = Square(5)
+        self.assertEqual(sq.width, 5)
+        self.assertEqual(sq.height, 5)
+        self.assertEqual(sq.x, 0)
+        self.assertEqual(sq.y, 0)
+        self.assertIsNotNone(sq.id)
 
-        self.assertEqual(rec.width, 5)
-        self.assertEqual(rec.height, 10)
-        self.assertEqual(rec.x, 2)
-        self.assertEqual(rec.y, 4)
-        self.assertEqual(rec.id, 1)
+        sq_2 = Square(10, 2, 3, 15)
+        self.assertEqual(sq_2.width, 10)
+        self.assertEqual(sq_2.height, 10)
+        self.assertEqual(sq_2.x, 2)
+        self.assertEqual(sq_2.y, 3)
+        self.assertIsNotNone(sq_2.id, 15)
 
-        rec.width = 4
-        rec.height = 7
-        rec.x = 1
-        rec.y = 9
-        rec.id = 5
-
-        self.assertEqual(rec.width, 4)
-        self.assertEqual(rec.height, 7)
-        self.assertEqual(rec.x, 1)
-        self.assertEqual(rec.y, 9)
-        self.assertEqual(rec.id, 5)
-
-    def test_attribute_validation(self):
+    """def test_attribute_validation(self):
         #test for validation of attributes of rectangle class
         with self.assertRaises(TypeError):
             rec = Rectangle(2, "3", 4, 6)
@@ -76,17 +70,19 @@ class TestRectangle(unittest.TestCase):
 
         with mock.patch('sys.stdout', new=StringIO()) as fake_out:
             rec.display()
-            self.assertEqual(fake_out.getvalue(), expected_display)
+            self.assertEqual(fake_out.getvalue(), expected_display)"""
 
     def test_str(self):
-        #tests the str method of the rectangle class
-        rec = Rectangle(5, 4, 2, 3, id=1)
+        #tests the str method of the square class
+        sq = Square(5, 2, 3, 7)
+        expected_str = '[Square] (7) 2/3 - 5'
+        self.assertEqual(str(sq), expected_str)
 
-        expected_str = '[Rectangle] (1) 2/3 - 5/4'
+        sq_2 = Square(9)
+        expected_str = '[Square] ({}) 0/0 - 9'.format(sq_2.id)
+        self.assertEqual(str(sq_2), expected_str)
 
-        self.assertEqual(str(rec), expected_str)
-
-    def test_display_with_coord(self):
+    """def test_display_with_coord(self):
         #tests the display function of rectangle class with coordinates
         rec = Rectangle(5, 3, 2, 1)
 
@@ -146,7 +142,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(rec), "[Rectangle] (9) 8/7 - 34/10")
 
         rec.update(3, height=6, y=4)
-        self.assertEqual(str(rec), "[Rectangle] (3) 8/7 - 34/10")
+        self.assertEqual(str(rec), "[Rectangle] (3) 8/7 - 34/10")"""
 
 
 if __name__ == '__main__':
