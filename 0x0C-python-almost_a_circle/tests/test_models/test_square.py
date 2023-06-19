@@ -92,39 +92,21 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rec.width, 3)
         self.assertEqual(rec.height, 5)
         self.assertEqual(rec.x, 6)
-        self.assertEqual(rec.y, 4)
+        self.assertEqual(rec.y, 4)"""
 
     def test_update_args_kwargs(self):
         #tests update to rectangle method with args kwargs functionality
-        rec = Rectangle(5, 10, 2, 4, id=1)
-        self.assertEqual(str(rec), "[Rectangle] (1) 2/4 - 5/10")
+        sq = Square(5)
+        sq.update(10)
+        self.assertEqual(sq.id, 10)
 
-        rec.update(2)
-        self.assertEqual(str(rec), "[Rectangle] (2) 2/4 - 5/10")
-
-        rec.update(3, 4)
-        self.assertEqual(str(rec), "[Rectangle] (3) 2/4 - 4/10")
-
-        rec.update(4, 5, 7)
-        self.assertEqual(str(rec), "[Rectangle] (4) 2/4 - 5/7")
-
-        rec.update(7, 6, 3, 5)
-        self.assertEqual(str(rec), "[Rectangle] (7) 5/4 - 6/3")
-
-        rec.update(width=10)
-        self.assertEqual(str(rec), "[Rectangle] (7) 5/4 - 10/3")
-
-        rec.update(y=7, height=49)
-        self.assertEqual(str(rec), "[Rectangle] (7) 5/7 - 10/49")
-
-        rec.update(id=6, x=7, width=3, y=7, height=10)
-        self.assertEqual(str(rec), "[Rectangle] (6) 7/7 - 3/10")
-
-        rec.update(width=34, id=9, x=8)
-        self.assertEqual(str(rec), "[Rectangle] (9) 8/7 - 34/10")
-
-        rec.update(3, height=6, y=4)
-        self.assertEqual(str(rec), "[Rectangle] (3) 8/7 - 34/10")"""
+        sq_2 = Square(8)
+        sq_2.update(8, 5, 2, 15)
+        self.assertEqual(sq_2.id, 8)
+        self.assertEqual(sq_2.width, 5)
+        self.assertEqual(sq_2.height, 5)
+        self.assertEqual(sq_2.x, 2)
+        self.assertEqual(sq_2.y, 15)
 
 
 if __name__ == '__main__':
