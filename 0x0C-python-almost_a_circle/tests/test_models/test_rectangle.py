@@ -87,6 +87,17 @@ class TestRectangle(unittest.TestCase):
 
         self.assertEqual(str(rec), expected_str)
 
+    def test_display_with_coord(self):
+        #tests the display function of rectangle class with coordinates
+        rec = Rectangle(5, 3, 2, 1)
+
+        expected_display = "\n  #####\n" \
+                           "  #####\n" \
+                           "  #####\n"
+
+        with mock.patch('sys.stdout', new=StringIO()) as fake_out:
+            rec.display()
+            self.assertEqual(fake_out.getvalue(), expected_display)
 
 if __name__ == '__main__':
     unittest.main()
