@@ -47,8 +47,9 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 if key == "id":
                     self.id = value
-                elif key == "size":
-                    self.size = value
+                elif key == "size" or key == "width" or key == "height":
+                    self.width = value
+                    self.height = value
                 elif key == "x":
                     self.x = value
                 elif key == "y":

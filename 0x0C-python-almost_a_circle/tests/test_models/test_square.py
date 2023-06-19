@@ -76,23 +76,7 @@ class TestRectangle(unittest.TestCase):
             rec.display()
             self.assertEqual(fake_out.getvalue(), expected_display)
 
-    def test_update_args(self):
-        #tests update to rectangle method with only args
-        rec = Rectangle(5, 10, 2, 4, id=1)
-
-        self.assertEqual(rec.width, 5)
-        self.assertEqual(rec.height, 10)
-        self.assertEqual(rec.x, 2)
-        self.assertEqual(rec.y, 4)
-        self.assertEqual(rec.id, 1)
-
-        rec.update(1, 3, 5, 6, 4)
-
-        self.assertEqual(rec.id, 1)
-        self.assertEqual(rec.width, 3)
-        self.assertEqual(rec.height, 5)
-        self.assertEqual(rec.x, 6)
-        self.assertEqual(rec.y, 4)"""
+        """
 
     def test_update_args_kwargs(self):
         #tests update to rectangle method with args kwargs functionality
@@ -107,6 +91,27 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(sq_2.height, 5)
         self.assertEqual(sq_2.x, 2)
         self.assertEqual(sq_2.y, 15)
+
+        sq_3 = Square(5)
+        sq_3.update(width=7, x=2)
+        self.assertEqual(sq_3.width, 7)
+        self.assertEqual(sq_3.height, 7)
+        self.assertEqual(sq_3.x, 2)
+
+        sq_4 = Square(8, 2, 3, 12)
+        sq_4.update(id=15, height=5, y=8)
+        self.assertEqual(sq_4.id, 15)
+        self.assertEqual(sq_4.width, 5)
+        self.assertEqual(sq_4.height, 5)
+        self.assertEqual(sq_4.y, 8)
+
+        sq_5 = Square(4, 5, 6, 7)
+        sq_5.update(size=9, x=3, y=9)
+        self.assertEqual(sq_5.id, 7)
+        self.assertEqual(sq_5.width, 9)
+        self.assertEqual(sq_5.height, 9)
+        self.assertEqual(sq_5.x, 3)
+        self.assertEqual(sq_5.y, 9)
 
 
 if __name__ == '__main__':
