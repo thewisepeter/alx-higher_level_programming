@@ -117,6 +117,18 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rec.x, 6)
         self.assertEqual(rec.y, 4)
 
+    def test_update_args_kwargs(self):
+        #tests update to rectangle method with args kwargs functionality
+        rec = Rectangle(5, 10, 2, 4, id=1)
+        self.assertEqual(str(rec), "[Rectangle] (1) 2/4 - 5/10")
+
+        rec.update(2)
+        self.assertEqual(str(rec), "[Rectangle] (2) 2/4 - 5/10")
+
+        rec.update(3, 4)
+        self.assertEqual(str(rec), "[Rectangle] (3) 2/4 - 4/10")
+
+
 
 if __name__ == '__main__':
     unittest.main()
