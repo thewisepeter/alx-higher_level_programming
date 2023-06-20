@@ -2,6 +2,7 @@
 """module of the class Base"""
 import json
 
+
 class Base:
     """this is the base class from which others inherit"""
     __nb_objects = 0
