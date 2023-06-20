@@ -33,6 +33,24 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             sq = Square(2 + 3j)
 
+        with self.assertRaises(TypeError):
+            sq = Square(1, "2")
+
+        with self.assertRaises(TypeError):
+            sq = Square(1, 4, "2")
+
+        with self.assertRaises(ValueError):
+            sq = Square(-1)
+
+        with self.assertRaises(ValueError):
+            sq = Square(2, -2)
+
+        with self.assertRaises(ValueError):
+            sq = Square(2, 5, -2)
+
+        with self.assertRaises(ValueError):
+            sq = Square(0)
+
     """def test_area(self):
         #test for area function of rectangle class
         rec = Rectangle(5, 4)

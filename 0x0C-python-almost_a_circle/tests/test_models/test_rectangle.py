@@ -57,6 +57,12 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             rec = Rectangle(2, 3, 4, -6)
 
+        with self.assertRaises(ValueError):
+            rec = Rectangle(0, 2)
+
+        with self.assertRaises(ValueError):
+            rec = Rectangle(1, 0)
+
     def test_area(self):
         #test for area function of rectangle class
         rec = Rectangle(5, 4)
