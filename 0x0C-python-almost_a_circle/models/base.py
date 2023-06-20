@@ -2,11 +2,15 @@
 """module of the class Base"""
 import json
 import csv
+import turtle
 
 
 class Base:
     """this is the base class from which others inherit"""
     __nb_objects = 0
+    turtle.setup(800, 600)
+    turtle.bgcolor("white")
+    turtle.title("Shapes")
 
     def __init__(self, id=None):
         """ initiation method
@@ -89,6 +93,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        #loads object from cls file
         filename = cls.__name__ + ".csv"
         try:
             with open(filename, "r") as file:
@@ -103,3 +108,26 @@ class Base:
                 return instances
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        window = turtle.Screen()
+        window.clear()
+
+        for shape in list_rectangles + list_squares:
+            turtle.penup()
+            turtle.goto(shape.x, shape.y)
+            turtle.pendown()
+
+            if isinstance(shape, Rectangle):
+                for _ in range(2):
+                    turtle.forward(shape.width)
+                    turtle.right(90)
+                    turtle.forward(shape.height)
+                    turtle.right(90)
+            elif isinstance(shape, Square):
+                for _ in range(4):
+                    turtle.forward(shape.size)
+                    turtle.right(90)
+
+        turtle.done()
