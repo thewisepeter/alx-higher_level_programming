@@ -111,23 +111,23 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
+        #draw shapes using turtle
         window = turtle.Screen()
-        window.clear()
+        window.bgcolor("white")
+        t = turtle.Turtle()
+        t.speed(5)
+        for rec in list_rectangles:
+            width = rec.width
+            height = rec.height
+            for i in range(2):
+                t.forward(width)
+                t.left(90)
+                t.forward(height)
+                t.left(90)
 
-        for shape in list_rectangles + list_squares:
-            turtle.penup()
-            turtle.goto(shape.x, shape.y)
-            turtle.pendown()
-
-            if isinstance(shape, Rectangle):
-                for _ in range(2):
-                    turtle.forward(shape.width)
-                    turtle.right(90)
-                    turtle.forward(shape.height)
-                    turtle.right(90)
-            elif isinstance(shape, Square):
-                for _ in range(4):
-                    turtle.forward(shape.size)
-                    turtle.right(90)
-
+        for sq in list_squares:
+            size = sq.size
+            for i in range(4):
+                t.forward(size)
+                t.left(90)
         turtle.done()
