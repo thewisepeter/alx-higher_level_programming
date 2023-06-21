@@ -84,7 +84,9 @@ class Base:
             if list_objs is not None:
                 for obj in list_objs:
                     if cls.__name__ == "Rectangle":
-                        writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                        writer.writerow([
+                            obj.id, obj.width, obj.height, obj.x, obj.y
+                            ])
                     elif cls.__name__ == "Square":
                         writer.writerow([obj.id, obj.size, obj.x, obj.y])
 
@@ -98,9 +100,14 @@ class Base:
                 instances = []
                 for row in reader:
                     if cls.__name__ == "Rectangle":
-                        instance = cls.create(width=int(row[1]), height=int(row[2]), x=int(row[3]), y=int(row[4]))
+                        instance = cls.create(
+                            width=int(row[1]), height=int(row[2]),
+                            x=int(row[3]), y=int(row[4])
+                        )
                     elif cls.__name__ == "Square":
-                        instance = cls.create(size=int(row[1]), x=int(row[2]), y=int(row[3]))
+                        instance = cls.create(
+                            size=int(row[1]), x=int(row[2]), y=int(row[3])
+                        )
                     instances.append(instance)
                 return instances
         except FileNotFoundError:
