@@ -2,15 +2,15 @@
 """module of the class Base"""
 import json
 import csv
-import turtle
+#import turtle
 
 
 class Base:
     """this is the base class from which others inherit"""
     __nb_objects = 0
-    turtle.setup(800, 600)
+    """turtle.setup(800, 600)
     turtle.bgcolor("white")
-    turtle.title("Shapes")
+    turtle.title("Shapes")"""
 
     def __init__(self, id=None):
         """ initiation method
@@ -109,7 +109,7 @@ class Base:
         except FileNotFoundError:
             return []
 
-    @staticmethod
+    """@staticmethod
     def draw(list_rectangles, list_squares):
         #draw shapes using turtle
         window = turtle.Screen()
@@ -130,4 +130,4 @@ class Base:
             for i in range(4):
                 t.forward(size)
                 t.left(90)
-        turtle.done()
+        turtle.done()"""
