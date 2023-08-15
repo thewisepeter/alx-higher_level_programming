@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-function add(a, b) {
+function add (a, b) {
   return a + b;
 }
 
@@ -14,8 +14,8 @@ if (args.length === 2) {
     const result = add(num1, num2);
     console.log(result);
   } else {
-    console.log('Invalid input');
+    console.log(NaN);
   }
 } else {
-  console.log('Missing arguments');
+  console.log(NaN);
 }
