@@ -1,16 +1,16 @@
 #!/usr/bin/node
 
-const square = 'X';
 const args = process.argv.slice(2);
-const x = parseInt(args[0]);
-if (!isNaN(x)) {
-  for (let i = 0; i <= x; i++) {
+const size = parseInt(args[0]);
+
+if (!isNaN(size) && size > 0) {
+  for (let i = 0; i < size; i++) {
     let row = '';
-    for (let j = 0; j <= x; j++) {
-      row += square;
+    for (let j = 0; j < size; j++) {
+      row += 'X';
     }
     console.log(row);
   }
-} else {
+} else if (isNaN(size)) {
   console.log('Missing size');
 }
