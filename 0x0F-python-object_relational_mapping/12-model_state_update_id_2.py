@@ -21,10 +21,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state_to_change = State(name="Louisiana")
-    session.add(new_state)
-    session.commit()
+    state_to_change = session.query(State).filter(State.id == 2).first()
 
-    print(new_state.id)
+    if state_to_change:
+        state_to_change.name = "New Mexico"
+        session.commit()
 
     session.close()
