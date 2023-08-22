@@ -27,5 +27,7 @@ if __name__ == "__main__":
         .order_by(State.id).first()
     if state:
         print("{}".format(state.id))
+    else:
+        print("Not found")
 
     session.close()
