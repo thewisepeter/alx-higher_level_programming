@@ -9,7 +9,7 @@ def find_peak(list_of_integers):
 
     left, right = 0, len(list_of_integers) - 1
 
-    if len(list_of_integers) == 0:
+    if (len(list_of_integers) == 0):
         return None
 
     while left < right:
