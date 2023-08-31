@@ -5,6 +5,8 @@ finding the peak
 
 
 def find_peak(list_of_integers):
+    """ function that finds peak"""
+
     left, right = 0, len(list_of_integers) - 1
 
     while left < right:
