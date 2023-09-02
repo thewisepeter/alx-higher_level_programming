@@ -10,11 +10,5 @@ import urllib.request
 url = sys.argv[1]
 request = urllib.request.Request(url)
 with urllib.request.urlopen(request) as response:
-    headers = response.info()
-    x_request_id = headers.get("X-Request-Id")
-    if x_request_id:
-        print(x_request_id)
-    else:
-        print("not found")
-
-
+    headers = dict(response.headers)
+    print(headers.get("X-Request-Id")
