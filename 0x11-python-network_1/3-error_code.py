@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 script that takes in a URLsends a request to the URL
-displays the value of the X-Request-Id variable
+displays the body of the response
 """
 
 import sys
@@ -13,6 +13,6 @@ if __name__ == "__main__":
     try:
         with urllib.request.urlopen(request) as response:
             content = response.read()
-            print(headers.get("X-Request-Id"))
+            print(content)
     except urllib.error.HTTPError as e:
         print("Error code: ", e.code) 
