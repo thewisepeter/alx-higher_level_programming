@@ -6,6 +6,7 @@ displays the body of the response
 
 import sys
 import urllib.request
+import urllib.request
 
 if __name__ == "__main__":
     url = sys.argv[1]
