@@ -10,6 +10,9 @@ import urllib.request
 if __name__ == "__main__":
     url = sys.argv[1]
     request = urllib.request.Request(url)
-    with urllib.request.urlopen(request) as response:
-        headers = dict(response.headers)
-        print(headers.get("X-Request-Id"))
+    try:
+        with urllib.request.urlopen(request) as response:
+            content = response.read()
+            print(headers.get("X-Request-Id"))
+    except urllib.error.HTTPError as e:
+        print("Error code: ", e.code) 
