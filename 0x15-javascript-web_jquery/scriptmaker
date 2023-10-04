@@ -1,0 +1,14 @@
+#!/bin/bash
+# This is a script maker and auto githubber
+
+echo "Enter filename:"
+read varname
+vi $varname
+
+git add $varname
+
+echo "Enter commit message:"
+read commit_message
+
+git commit -m "$commit_message"
+git push
